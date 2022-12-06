@@ -24,7 +24,8 @@ def is_valid_pwd(password):
 
 
 def is_valid_name(name):
-    return all(c.isalpha() for c in set(name)) and name.count(' ') >= 1
+    spaces = name.count(' ')
+    return sum(c.isalpha() for c in name) == len(name) - spaces and spaces >= 1
 
 
 def hello():
